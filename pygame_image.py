@@ -22,17 +22,21 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
+
+        a=0
+        b=0
         key_lst = pg.key.get_pressed()
         if key_lst[pg.K_UP]:
-            kk_rct.move_ip((0,-1))
+            b=-1
         if key_lst[pg.K_DOWN]:
-            kk_rct.move_ip((0,1))
+            b=1
         if key_lst[pg.K_LEFT]:
-            kk_rct.move_ip((-1,0))
+            a=-1
         if key_lst[pg.K_RIGHT]:
-            kk_rct.move_ip((1,0))
+            a=1
         else:
-            kk_rct.move_ip((-1,0))
+            a=-1
+        kk_rct.move_ip((a,b))
         
         x=tmr%3200
         screen.blit(bg_img, [-x, 0])# 練習5:背景画像を右から左へ
