@@ -23,7 +23,7 @@ def main():
             if event.type == pg.QUIT: return
 
 
-        a=0
+        a=-1
         b=0
         key_lst = pg.key.get_pressed()
         if key_lst[pg.K_UP]:
@@ -31,11 +31,10 @@ def main():
         if key_lst[pg.K_DOWN]:
             b=1
         if key_lst[pg.K_LEFT]:
-            a=-1
+            a=-2
         if key_lst[pg.K_RIGHT]:
             a=1
-        else:
-            a=-1
+
         kk_rct.move_ip((a,b))
         
         x=tmr%3200
